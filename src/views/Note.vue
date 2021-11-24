@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <form class="p-5 bg-light border border-1 mb-3" @submit.prevent="updateNote">
-        <h2 class="mb-3">Edit Note</h2>
+        <h2 class="mb-3">Edit Note: {{ id }}</h2>
         <div class="mb-3">
           <label class="form-label">Title</label>
           <input type="text" class="form-control" v-model="title">
@@ -33,6 +33,9 @@ export default {
     }
   },
   methods: {
+    getNote: function () {
+
+    },
     updateNote: function () {
      
     },

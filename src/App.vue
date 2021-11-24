@@ -8,7 +8,7 @@
         <button class="btn btn-secondary" @click="showForm = true">&plus;</button>
       </div>
     </div>
-    <router-view/>
+    <router-view :key="$router.fullPath" />
     <transition enter-active-class="animate__animated animate__bounceIn">
       <div class="modal" v-show="showForm">
         <div class="modal-dialog">
@@ -17,7 +17,7 @@
               <h2 class="modal-title">New Note</h2>
             </div>
             <div class="modal-body bg-light">
-              <form class="p-3" @submit.prevent="">
+              <form class="p-3" @submit.prevent="addNote">
                 <div class="mb-3">
                   <label class="form-label">Title</label>
                   <input type="text" class="form-control" v-model="title">
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     addNote: function () {
-      
+
     },
     cancelNote: function () {
       this.showForm = false
